@@ -10,13 +10,15 @@ Page({
     	"inputTitle" : '公司名称:',
     	"placeholder" : "请输入公司名称",
       "maxlength" : "5",
-      "type": "text"
+      "type": "text",
+      "img":"../../../images/projectCmpName.png"
     },{
       "name" : "PN",
     	"inputTitle" : '项目名称:',
     	"placeholder" : "请输入项目名称",
       "maxlength" : "10",
-      "type": "text"
+      "type": "text",
+      "img":"../../../images/projeectName.png"
     }]
   },
   checkCode:function(){

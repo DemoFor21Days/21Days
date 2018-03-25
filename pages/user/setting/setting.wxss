@@ -3,7 +3,7 @@
 	height: 42rpx;
 	border: 1rpx solid red;
 	margin-left: 30rpx;
-	margin-right: 30rpx;
+	margin-right: 20rpx;
 }
 .setting .lists{
 	margin-top: 30rpx;

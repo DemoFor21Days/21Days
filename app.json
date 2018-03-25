@@ -1,12 +1,12 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/user/sort/sort",
-    "pages/index/addPunchCard/addPunchCard",
-    "pages/index/addProject/addProject",
-    "pages/index/historyPunchCard/historyPunchCard",
-    "pages/user/user",
     "pages/user/setting/setting",
+    "pages/user/sort/sort",
+    "pages/user/user",
+    "pages/index/historyPunchCard/historyPunchCard",
+    "pages/index/addProject/addProject",
+    "pages/index/addPunchCard/addPunchCard",
     "pages/index/addProject/stage/stage",
     "pages/logs/logs"
   ],
@@ -18,7 +18,7 @@
   },
   "tabBar": {
     "color": "#999999",
-    "selectedColor": "#4286f5",
+    "selectedColor": "#4b69a8",
     "backgroundColor": "#ffffff",
     "borderStyle": "black",
     "list": [{

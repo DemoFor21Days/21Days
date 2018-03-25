@@ -22,4 +22,7 @@
 	    <image data-id="{{item.id}}" bindtap="deleteFunc" src="../../../images/delete.png"/>
 	  </view>
 	</view>
+	<view class="clearAll">
+		<text>清空打卡记录</text>
+	</view>
 </view>

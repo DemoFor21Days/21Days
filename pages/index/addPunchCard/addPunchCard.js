@@ -9,13 +9,15 @@ Page({
     	"inputTitle" : '活动名称:',
     	"placeholder" : "请输入活动标题",
       "maxlength" : "5",
-      "type": "text"
+      "type": "text",
+      "img":'../../../images/punchCardName.png'
     },{
       "name" : "intro",
     	"inputTitle" : '打卡介绍:',
     	"placeholder" : "请输入活动主题",
       "maxlength" : "10",
-      "type": "text"
+      "type": "text",
+      "img":'../../../images/punchCardIntro.png'
     }],
     submitInput: [],
     // startTime: '',

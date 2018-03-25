@@ -5,7 +5,7 @@
 	<view style="position: relative;">
 		<view style="border-top: 20rpx solid #f1f2f6;overflow: hidden;display: flex">
 			<view class="leftLabel">
-				<image src=""/>
+				<image src="../../../images/addProjectImg.png"/>
 				<text class="title">打卡主图</text>
 			</view>
 			<view class="rightContent">
@@ -19,7 +19,7 @@
 	<view>
 		<view style="border-top: 20rpx solid #f1f2f6;overflow: hidden;display: flex">
 			<view class="leftLabel">
-				<image src=""/>
+				<image src="../../../images/addProjectTime.png"/>
 				<text class="title">项目时间</text>
 			</view>
 			<view class="rightContent">
@@ -48,7 +48,7 @@
 		<picker class="picker" range="{{punchCardFrequency}}" value="{{punchCardFrequency[dataLists.cycle]}}" bindchange="bindpunchCardFrequency">
 		    <view style="display: flex;height: 110rpx;line-height: 110rpx;">
 				<view class="left">
-					<image src=""/>
+					<image src="../../../images/punchCardCycle.png"/>
 					<view style="height: 0;margin-top: -30rpx;">
 						<text class="leftTitle">打卡频率</text>
 					</view>
@@ -64,7 +64,7 @@
 		<picker class="picker" range="{{punchCardRequire}}" value="{{punchCardRequire[dataLists.type]}}" bindchange="bindpunchCardRequire">
 	    <view style="display: flex;height: 110rpx;line-height: 110rpx;">
 				<view class="left">
-					<image src=""/>
+					<image src="../../../images/punchCardType.png"/>
 					<view style="height: 0;margin-top: -30rpx;">
 						<text class="leftTitle">打卡要求</text>
 					</view>
@@ -80,7 +80,7 @@
 		<picker class="picker" range="{{punchCardMust}}" value="{{punchCardMust[dataLists.necessary]}}" bindchange="bindpunchCardMust">
 	    <view style="display: flex;height: 110rpx;line-height: 110rpx;">
 				<view class="left">
-					<image src=""/>
+					<image src="../../../images/punchCardNecessary.png"/>
 					<view style="height: 0;margin-top: -30rpx;">
 						<text class="leftTitle">是否必选</text>
 					</view>
@@ -96,7 +96,7 @@
 		<picker class="picker" range="{{punchCardChose}}" value="{{punchCardChose[dataLists.stageOrder]}}" bindchange="bindpunchCardChose">
 	    <view style="display: flex;height: 110rpx;line-height: 110rpx;">
 				<view class="left">
-					<image src=""/>
+					<image src="../../../images/punchCardLocation.png"/>
 					<view style="height: 0;margin-top: -30rpx;">
 						<text class="leftTitle">所处阶段</text>
 					</view>
@@ -113,7 +113,7 @@
 	<view class="punchCardContent">
 		<view style="border-top: 20rpx solid #f1f2f6;overflow: hidden;display: flex">
 			<view class="leftLabel">
-				<image src=""/>
+				<image src="../../../images/addProjectIntro.png"/>
 				<text class="title">打卡内容</text>
 			</view>
 			<view class="rightContent">

@@ -4,7 +4,9 @@ wx:for-items="{{lists}}"
 class="wrapper"
 >
   <view class="left">
-    <image class="image" src=""/>
+    <image class="image" src="{{lists[index].img}}"/>
+    <!-- projectName.png -->
+    <!-- <image class="image" src="../../../images/projectName.png"/> -->
     <view style="height: 0;margin-top:-30rpx;">
       <text class="label">{{lists[index].inputTitle}}</text>
     </view>

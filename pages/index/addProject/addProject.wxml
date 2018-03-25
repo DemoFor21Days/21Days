@@ -5,7 +5,7 @@
 		</view>
 		<view style="border-top: 20rpx solid #DFE0E4;overflow: hidden;display: flex">
 			<view class="leftLabel">
-				<image src=""/>
+				<image src="../../../images/addProjectTime.png"/>
 				<text class="title">项目时间</text>
 			</view>
 			<view class="rightContent">
@@ -31,7 +31,7 @@
 		</view>
 		<view style="border-top: 20rpx solid #DFE0E4;overflow: hidden;display: flex">
 			<view class="leftLabel">
-				<image src=""/>
+				<image src="../../../images/addProjectImg.png"/>
 				<text class="title">项目图片</text>
 			</view>
 			<view class="rightContent">
@@ -43,7 +43,7 @@
 		</view>
 		<view style="border-top: 20rpx solid #DFE0E4;overflow: hidden;display: flex">
 			<view class="leftLabel">
-				<image src=""/>
+				<image src="../../../images/addProjectIntro.png"/>
 				<text class="title">项目介绍</text>
 			</view>
 			<view class="rightContent">

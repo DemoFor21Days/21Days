@@ -21,7 +21,7 @@
 	  		</view>
 	  		<view wx:if="{{item.showOperation}}" class="operation">
 	  			<view class="operationModel">
-	  				<image class="operationImg" src="" />
+	  				<image style="width:30rpx;" class="operationImg" src="../../../images/teacherOperation.png" />
 	  				<text>老师</text>
 	  			</view>
 	  			<view class="operationModel">

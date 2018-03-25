@@ -210,14 +210,18 @@ page{
   /*display: flex;*/
   /*justify-content: center;*/
   /*align-items: center;*/
-  position: relative;
-  height: 378rpx;
+  /*position: relative;*/
+  /*height: 378rpx;*/
 }
 .hasProject .punchCard .content .child{
-  position: absolute;
+  height: 374rpx;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  /*position: relative;
   top: 50%;
   left: 50%;
-  transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);*/
 }
 .hasProject .punchCard .header{
   font-size: 32rpx;
@@ -243,13 +247,17 @@ page{
 .hasProject .punchCard .addNew{
   /*margin-top: 114rpx;*/
   color: #4b69a8;
-  border: 1rpx solid #4b69a8;
   margin-bottom: 20rpx;
+}
+.hasProject .punchCard .addNew::after{
+  border: 1rpx solid #4b69a8;
 }
 .hasProject .punchCard .choseFromHistory{
   color: #00c6ae;
-  border: 1rpx solid #00c6ae;
   line-height: 54rpx;
+}
+.hasProject .punchCard .choseFromHistory::after{
+  border: 1rpx solid #00c6ae;
 }
 .hasProject .punchCard .choseFromHistory .addIcon{
   font-size: 42rpx;
@@ -266,7 +274,7 @@ page{
   margin-left: 40rpx;
 }
 .hasProject .punchCard .subTitle .number{
-  color: #4f8ef4;
+  color: #4b69a8;
 }
 .hasProject .punchCard .right{
   float: right;
@@ -274,18 +282,23 @@ page{
   margin-right: 30rpx;
 }
 .hasProject .punchCard .right button{
-  color: #3eb85f;
-  border: 1rpx solid #3eb85f;
+  color: #00c6ae;
   font-size: 32rpx;
   background-color: white;
   height: 60rpx;
   line-height: 60rpx;
   font-family: "PingFangSC-Regular";
 }
+.hasProject .punchCard .right button::after{
+  border: 1rpx solid #00c6ae;
+}
 .hasProject .punchCard .stage{
-  position: relative;
+  /*position: relative;*/
   border-top: 20rpx solid #f1f2f6;
   /*padding-left: 30rpx;*/
+}
+.hasProject .punchCard .stage:last-child{
+  border-bottom: 20rpx solid #f1f2f6;
 }
 .hasProject .punchCard .stage .stageHead{
   height: 90rpx;
@@ -335,8 +348,8 @@ page{
   margin-left: 30rpx;
 }
 .hasProject .punchCard .stage .choise{
-  color: #4286f5;
-  border: 1rpx solid #4286f5;
+  color: #4b69a8;
+  border: 1rpx solid #4b69a8;
   background-color: white;
   width: 78rpx;
   height: 34rpx;
@@ -345,6 +358,22 @@ page{
   padding: 0;
   margin-left: 30rpx;
   margin-top: 16rpx;
+  float: left;
+}
+.hasProject .punchCard .stage .month{
+  width: 94rpx;
+  height: 34rpx;
+  color:#00c6ae;
+  line-height: 34rpx;
+  font-size: 20rpx;
+  background-color: white;
+  padding: 0;
+  float: left;
+  margin-top: 16rpx;
+  margin-left: 10rpx;
+}
+.hasProject .punchCard .stage .month::after{
+  border:1rpx solid #00c6ae;
 }
 .hasProject .punchCard .punchCardNumber{
   border-top: 20rpx solid #f1f2f6;
@@ -374,7 +403,7 @@ page{
 .hasProject .punchCard .punchCardNumber .editFinish{
   margin-left: 30rpx;
   margin-right: 30rpx;
-  background-color: #3bb35b;
+  background-color: #00c6ae;
   height: 92rpx;
   line-height: 92rpx;
   color: white;

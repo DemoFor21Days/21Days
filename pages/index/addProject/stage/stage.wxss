@@ -15,7 +15,7 @@
 	height: 42rpx;
 	margin-left: 30rpx;
 	margin-right: 30rpx;
-	border: 1rpx solid red;
+	/*border: 1rpx solid red;*/
 }
 .all  .title{
 	font-family: "PingFangSC-Medium";
@@ -51,8 +51,8 @@
 }
 .wrapper .label image{
 	width: 45rpx;
-	height: 45rpx;
-	border: 1rpx solid red;
+	height: 46rpx;
+	/*border: 1rpx solid red;*/
 }
 .wrapper .label text{
 	padding-right: 20rpx;

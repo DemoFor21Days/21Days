@@ -31,7 +31,7 @@
 		<!-- <lists class="lists" lists="{{lists}}" bind:inputValue="getInputVal"></lists> -->
 		<view class="editContent">
 			<!-- <view class="left"> -->
-				<image class="img" src=""/>
+				<image class="img" src="../../../images/projectCmpName.png"/>
 				<view style="float: left;">
 					<text class="leftTitle">公司名称</text>
 				</view>
@@ -40,7 +40,7 @@
 		</view>
 		<view class="editContent">
 			<!-- <view class="left"> -->
-				<image class="img" src=""/>
+				<image class="img" src="../../../images/projectName.png"/>
 				<view style="float: left;">
 					<text class="leftTitle">项目名称</text>
 				</view>

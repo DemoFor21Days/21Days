@@ -116,7 +116,7 @@
           </view>
         </view>
         <!-- 打卡管理部分 -->
-        <view class="punchCard" wx:if="{{bindPunchCard || punchCardList.clockers.length > 0}}">
+        <view class="punchCard" wx:if="{{bindPunchCard}}">
           <view class="header">
             <text class="left">我管理的打卡</text>
             <view class="left subTitle">
@@ -126,6 +126,14 @@
               <button bindtap="editPunchCard">编辑</button>
             </view>
           </view>
+          <view wx:if="{{!editbindPunchCard}}" class="content">
+            <view class="child">
+              <button class="addNew" bindtap="addNew">创建新的打卡项目</button>
+              <button bindtap="historyPunchCardFunc" class="choseFromHistory">
+                <text class="addIcon">+</text>
+                <text>从打卡历史中选择</text>
+            </button>
+            </view>
           <view class="stage">
             <view class="stageHead">
               <text>阶段一</text>
@@ -141,7 +149,8 @@
                   <text>{{item.intro}}</text>
                 </view>
                 <view>
-                  <button style="border:1rpx solid {{mustChoise ? '#4286f5;' : '#3eb85f;'}} color:{{mustChoise ? '#4286f5;' : '#3eb85f;'}}" class="choise">必选</button>
+                  <button style="border:1rpx solid {{mustChoise ? '#4b69a8;' : '#00c6ae;'}} color:{{mustChoise ? '#4b69a8;' : '#00c6ae;'}}" class="choise">必选</button>
+                  <button class="month">月打卡</button>
                 </view>
               </view>
               <view class="operation">
@@ -159,14 +168,6 @@
             </view>
             <button bindtap="editFinshFunc" class="editFinish" type="primary">编辑完成</button>
           </view>
-          <view wx:if="{{!editbindPunchCard}}" class="content">
-            <view class="child">
-              <button class="addNew" bindtap="addNew">创建新的打卡项目</button>
-              <button bindtap="historyPunchCardFunc" class="choseFromHistory">
-                <text class="addIcon">+</text>
-                <text>从打卡历史中选择</text>
-            </button>
-            </view>
           </view>
         </view>
         <!-- <view wx:else style="height: 378rpx;background-color: #f1f2f6">

@@ -12,9 +12,9 @@
   justify-content: center;
 }
 .projectList .leftLabel image{
-  width:35rpx;
-  height:44rpx;
-  border: 1rpx solid red; 
+  width:45rpx;
+  height:45rpx;
+  /*border: 1rpx solid red; */
 }
 .projectList .rightContent{
   float: left;

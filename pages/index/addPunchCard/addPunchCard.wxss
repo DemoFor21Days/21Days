@@ -8,9 +8,9 @@
   justify-content: center;
 }
 .punchCard .leftLabel image{
-  width:35rpx;
-  height:44rpx;
-  border: 1rpx solid red; 
+  width:45rpx;
+  height:45rpx;
+  /*border: 1rpx solid red; */
 }
 .punchCard .rightContent{
   float: left;
@@ -134,9 +134,9 @@
   /*justify-content: center;*/
 }
 .punchCard .specailPicker .left image{
-  width:35rpx;
-  height:44rpx;
-  border: 1rpx solid red; 
+  width:45rpx;
+  height:45rpx;
+  /*border: 1rpx solid red; */
   margin-top: 15rpx;
 }
 .punchCard  .specailPicker .left .leftTitle{

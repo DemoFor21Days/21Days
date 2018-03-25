@@ -12,9 +12,9 @@
 	line-height: 110rpx;
 }
 .wrapper .image{
-  width:35rpx;
+  width:45rpx;
   height:44rpx;
-  border:1rpx solid red;
+  /*border:1rpx solid red;*/
   margin-top:17rpx;
 }
 .wrapper .label{

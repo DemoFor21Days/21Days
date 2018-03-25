@@ -2,7 +2,7 @@
 	<!-- 课前部分 -->
 	<view class="first all">
 		<view class="header">
-			<image src="" class="icon"/>
+			<image src="../../../../images/frontLesson.png" class="icon"/>
 			<text class="title">课前部分</text>
 		</view>
 		<view class="content">
@@ -13,7 +13,7 @@
 						<view class="main">
 							<view class="wrapper">
 								<view class="label">
-									<image src=""/>
+									<image style="width:34rpx;" src="../../../../images/lessonLocation.png"/>
 									<text class="label">节点名称:</text>
 								</view>
 								<input data-index="{{index}}" data-stage="{{0}}" bindinput="bindKeyInput" placeholder="请输入节点名称" value="{{item.name}}"/>
@@ -23,7 +23,7 @@
 								<picker  data-index="{{index}}" data-stage="{{0}}"  class="picker" mode="date" value="{{item.beginTime}}" bindchange="startTimedataChange">
 							    <view style="overflow: hidden">
 							    	<view class="label">
-											<image src=""/>
+											<image src="../../../../images/lessonBeginTime.png"/>
 											<text class="label">开始时间:</text>
 										</view>
 							      <text class="text" wx:if="{{item.beginTime}}">{{item.beginTime}}</text>
@@ -39,7 +39,7 @@
 								<picker data-index="{{index}}" data-stage="{{0}}" class="picker" mode="date" value="{{endTime}}" bindchange="endTimedataChange">
 							    <view style="overflow: hidden">
 							    	<view class="label">
-											<image src=""/>
+											<image src="../../../../images/lessonEndTime.png"/>
 											<text class="label">结束时间:</text>
 										</view>
 							      <text class="text" wx:if="{{item.endTime}}">{{item.endTime}}</text>
@@ -76,7 +76,7 @@
 	<!-- 课中部分 -->
 	<view class="second all">
 		<view class="header">
-			<image src="" class="icon"/>
+			<image src="../../../../images/centerLesson.png" class="icon"/>
 			<text class="title">课中部分</text>
 		</view>
 		<view class="content">
@@ -87,7 +87,7 @@
 						<view class="main">
 							<view class="wrapper">
 								<view class="label">
-									<image src=""/>
+									<image style="width:34rpx;" src="../../../../images/lessonLocation.png"/>
 									<text class="label">节点名称:</text>
 								</view>
 								<input data-index="{{index}}" data-stage="{{1}}" bindinput="bindKeyInput" placeholder="请输入节点名称" value="{{item.name}}"/>
@@ -97,7 +97,7 @@
 								<picker  data-index="{{index}}" data-stage="{{1}}"  class="picker" mode="date" value="{{item.beginTime}}" bindchange="startTimedataChange">
 							    <view style="overflow: hidden">
 							    	<view class="label">
-											<image src=""/>
+											<image src="../../../../images/lessonBeginTime.png"/>
 											<text class="label">开始时间:</text>
 										</view>
 							      <text class="text" wx:if="{{item.beginTime}}">{{item.beginTime}}</text>
@@ -113,7 +113,7 @@
 								<picker data-index="{{index}}" data-stage="{{1}}" class="picker" mode="date" value="{{endTime}}" bindchange="endTimedataChange">
 							    <view style="overflow: hidden">
 							    	<view class="label">
-											<image src=""/>
+											<image src="../../../../images/lessonEndTime.png"/>
 											<text class="label">结束时间:</text>
 										</view>
 							      <text class="text" wx:if="{{item.endTime}}">{{item.endTime}}</text>
@@ -150,7 +150,7 @@
 	<!-- 课后部分 -->
 	<view class="third all">
 		<view class="header">
-			<image src="" class="icon"/>
+			<image src="../../../../images/endLesson.png" class="icon"/>
 			<text class="title">课后部分</text>
 		</view>
 		<view class="content">
@@ -161,7 +161,7 @@
 						<view class="main">
 							<view class="wrapper">
 								<view class="label">
-									<image src=""/>
+									<image style="width:34rpx;" src="../../../../images/lessonLocation.png"/>
 									<text class="label">节点名称:</text>
 								</view>
 								<input data-index="{{index}}" data-stage="{{2}}" bindinput="bindKeyInput" placeholder="请输入节点名称" value="{{item.name}}"/>
@@ -171,7 +171,7 @@
 								<picker  data-index="{{index}}" data-stage="{{2}}"  class="picker" mode="date" value="{{item.beginTime}}" bindchange="startTimedataChange">
 							    <view style="overflow: hidden">
 							    	<view class="label">
-											<image src=""/>
+											<image src="../../../../images/lessonBeginTime.png"/>
 											<text class="label">开始时间:</text>
 										</view>
 							      <text class="text" wx:if="{{item.beginTime}}">{{item.beginTime}}</text>
@@ -187,7 +187,7 @@
 								<picker data-index="{{index}}" data-stage="{{2}}" class="picker" mode="date" value="{{endTime}}" bindchange="endTimedataChange">
 							    <view style="overflow: hidden">
 							    	<view class="label">
-											<image src=""/>
+											<image src="../../../../images/lessonEndTime.png"/>
 											<text class="label">结束时间:</text>
 										</view>
 							      <text class="text" wx:if="{{item.endTime}}">{{item.endTime}}</text>
