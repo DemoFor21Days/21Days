@@ -1,0 +1,58 @@
+//index.js
+//获取应用实例
+const app = getApp()
+Page({
+  data: {
+  	historyList:{
+      allNum:'需加入个数',
+      neceNum:'已加入个数',
+      clockwes:[{
+        id:'5',
+        name:'活动1',
+        intro:'活动介绍1',
+        partyMainImg:'',
+        beginTime:'',
+        endTime:'',
+        cycle:'无',
+        type:'必须音频',
+        necessary:'必选',
+        stageOrder:'阶段序号：（数字）',
+        remark:'',
+        projectName:''
+      },{
+        id:'6',
+        name:'活动2',
+        intro:'活动介绍2',
+        partyMainImg:'',
+        beginTime:'',
+        endTime:'',
+        cycle:'无',
+        type:'必须音频',
+        necessary:'必选',
+        stageOrder:'阶段序号：（数字）',
+        remark:'',
+        projectName:''
+      },{
+        id:'7',
+        name:'活动3',
+        intro:'活动介绍三',
+        partyMainImg:'',
+        beginTime:'',
+        endTime:'',
+        cycle:'无',
+        type:'必须音频',
+        necessary:'必选',
+        stageOrder:'阶段序号：（数字）',
+        remark:'',
+        projectName:''
+      }]
+    }
+  },
+  onLoad:function(option){
+    console.log(option.projectName)
+    // 发送ajax请求
+  },
+  deleteFunc:function(e){
+  	console.log('删除id为' + e.target.dataset.id)
+  }
+})

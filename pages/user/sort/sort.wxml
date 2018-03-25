@@ -1,0 +1,77 @@
+<view class="sort">
+  <view class="nav bc_white">
+    <view class="{{selectedChildren?'checked':'default'}}" bindtap="selectedChildren">学生排行榜</view>
+    <view class="{{selectedTeacher?'checked':'default'}}" bindtap="selectedTeacher">老师排行榜</view>
+  </view>
+  <view class="{{selectedChildren?'show':'hidden'}}">
+  	<block  wx:for="{{contentList}}" wx:key="{{index}}">
+	  	<view class="content">
+	  		<view class="left">
+		  		<image wx:if="{{index<=2 && index==0}}" class="winning" src="../../../images/firstWinner.png"/>
+		  		<image wx:if="{{index<=2 && index==1}}" class="winning" src="../../../images/secondWinner.png"/>
+		  		<image wx:if="{{index<=2 && index==2}}" class="winning" src="../../../images/thirdWinner.png"/>
+		  		<text wx:if="{{index>=3}}">{{index+1}}</text>
+		  		<image class="portrait" src="../../../images/person.png"/>
+		  		<text class="cont">{{item.content}}</text>
+	  		</view>
+	  		<view class="right">
+	  			<image class="integral" src="../../../images/score.png"/>
+	  			<text class="integralNumber">{{item.integralNumber}}</text>
+	  			<image data-status="{{item.showOperation}}" data-operation="{{index}}" bindtap="showActionSheetFunc" class="kind-list-img" src="../../../images/historyOperation.png"/>
+	  		</view>
+	  		<view wx:if="{{item.showOperation}}" class="operation">
+	  			<view class="operationModel">
+	  				<image class="operationImg" src="" />
+	  				<text>老师</text>
+	  			</view>
+	  			<view class="operationModel">
+	  				<image style="width:30rpx;" class="operationImg" src="../../../images/historyChildren.png" />
+	  				<text>组长</text>
+	  			</view>
+	  			<view class="operationModel">
+	  				<image class="operationImg" src="../../../images/historyDelete.png" />
+	  				<text>删除</text>
+	  			</view>
+	  		</view>
+	  	</view>
+  	</block>
+  </view>
+  <view class="{{selectedTeacher?'show':'hidden'}}">
+  	<block  wx:for="{{contentList}}" wx:key="{{index}}">
+	  	<view class="content">
+	  		<view class="left">
+		  		<image wx:if="{{index<=2 && index==0}}" class="winning" src="../../../images/firstWinner.png"/>
+		  		<image wx:if="{{index<=2 && index==1}}" class="winning" src="../../../images/secondWinner.png"/>
+		  		<image wx:if="{{index<=2 && index==2}}" class="winning" src="../../../images/thirdWinner.png"/>
+		  		<text wx:if="{{index>=3}}">{{index+1}}</text>
+		  		<image class="portrait" src="../../../images/person.png"/>
+		  		<text class="cont">{{item.content}}</text>
+	  		</view>
+	  		<view class="right">
+	  			<image class="integral" src="../../../images/score.png"/>
+	  			<text class="integralNumber">{{item.integralNumber}}</text>
+	  			<image data-status="{{item.showOperation}}" data-operation="{{index}}" bindtap="showActionSheetFunc" class="kind-list-img" src="../../../images/historyOperation.png"/>
+	  		</view>
+	  		<view wx:if="{{item.showOperation}}" class="operation">
+	  			<view class="operationModel">
+	  				<image class="operationImg" src="" />
+	  				<text>老师</text>
+	  			</view>
+	  			<view class="operationModel">
+	  				<image style="width:30rpx;" class="operationImg" src="../../../images/historyChildren.png" />
+	  				<text>组长</text>
+	  			</view>
+	  			<view class="operationModel">
+	  				<image class="operationImg" src="../../../images/historyDelete.png" />
+	  				<text>删除</text>
+	  			</view>
+	  		</view>
+	  	</view>
+  	</block>
+  </view>
+  <view style="float:right;margin-top: 32rpx;">
+  	<text class="rule">查看积分规则></text>
+  </view>
+</view>
+
+

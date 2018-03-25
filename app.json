@@ -1,0 +1,37 @@
+{
+  "pages":[
+    "pages/user/sort/sort",
+    "pages/index/addPunchCard/addPunchCard",
+    "pages/index/index",
+    "pages/index/addProject/addProject",
+    "pages/index/historyPunchCard/historyPunchCard",
+    "pages/user/user",
+    "pages/user/setting/setting",
+    "pages/index/addProject/stage/stage",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "21Days",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#4286f5",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "学习地图",
+      "iconPath": "./images/map-unchoose.png",
+      "selectedIconPath":"./images/map.png"
+    }, {
+      "pagePath": "pages/user/user",
+      "text": "个人中心",
+      "iconPath": "./images/user-unchoose.png",
+      "selectedIconPath":"./images/user.png"
+    }]
+  },
+  "debug": true
+}

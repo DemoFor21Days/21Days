@@ -1,0 +1,173 @@
+.userCenter{
+	background-color: #f1f2f6;
+}
+.userCenter .header{
+	height: 475rpx;
+	/*width: 1000rpx;*/
+	background-color: #608FED;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+/*.userCenter .background{
+	height: 79rpx;
+	border-bottom-left-radius: 100%;
+	border-bottom-right-radius: 100%;
+	background-color: #608FED;
+	margin-top: -6rpx;
+	box-shadow:0 20rpx 0 rgba(255,255,255,0.2);
+}*/
+.userCenter .header image{
+	width: 184rpx;
+	height: 184rpx;
+	/*border: 1rpx solid black;*/
+}
+.userCenter .header .tx{
+	/*padding-top: 16rpx;*/
+}
+/*.userCenter .header .tx,.userCenter .header .content{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}*/
+.userCenter .header .content{
+	/*margin-top: 30rpx;
+	font-size: 36rpx;
+	font-family: "PingFangSC";
+	color: white;*/
+	/*color: */
+}
+/*.userCenter .header  .position{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20rpx;
+	font-size: 28rpx;
+	font-family: "PingFangSC";
+	color: white;
+}*/
+.userCenter .slot{
+	/*display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-bottom: 30rpx;*/
+	width: 570rpx;
+	position: absolute;
+	background-color: white;
+	height: 140rpx;
+	line-height: 140rpx;
+	margin-top: -70rpx;
+	margin-left: 90rpx;
+	margin-right: 90rpx;
+	border-radius: 10rpx;
+}
+.userCenter .slot image{
+	height: 58rpx;
+	float: left;
+	margin-top:40rpx;
+	margin-right: 10rpx;
+	/*border: 1rpx solid red;*/
+}
+
+.userCenter .slot .one image{
+	width: 50rpx;
+}
+.userCenter .slot .two image{
+	width: 62rpx;
+}
+.userCenter .slot .one{
+	/*margin-top: 20rpx;*/
+	font-family: "PingFangSC";
+	font-size: 28rpx;
+	float: left;
+	margin-left: 65rpx;
+}
+.userCenter .slot .two{
+	font-family: "PingFangSC";
+	font-size: 28rpx;
+	float: right;
+	margin-right: 65rpx;
+}
+.userCenter .slot .one .oneText,.userCenter .slot .two .twoText{
+	display:inline-block;
+	margin-top:20rpx;
+	margin-left:-90rpx;
+}
+.userCenter .slot .sx{
+	border: 1rpx solid #E5E5E5;
+	width: 1rpx;
+	height: 80rpx;
+}
+.userCenter .container .lists{
+	height: 110rpx;
+	line-height: 110rpx;
+	/*border-top: 20rpx solid #E5E5E5;*/
+	margin-top: 20rpx;
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	/*justify-content: center;*/
+	align-items: center;
+	background-color: white;
+	margin-left: 30rpx;
+	margin-right: 30rpx
+}
+.userCenter .container .lists.first{
+	margin-top: 110rpx;
+}
+.userCenter .container .lists text{
+	font-family: "PingFangSC";
+	font-size: 28rpx;
+	color: #0f161e;
+	float: left;
+}
+.userCenter .container .lists image{
+	width:42rpx;
+	height: 42rpx;
+	/*border: 1px solid red;*/
+	margin-left: 40rpx;
+	margin-right: 40rpx;
+	float: left;
+	/*margin-top: 36rpx;*/
+}
+.userCenter .container .lists .listMessage{
+	width: 42rpx;
+	height: 42rpx;
+	font-family: "PingFangSC";
+	font-size: 24rpx;
+	border-radius: 100%;
+	color: white;
+	background-color: #f24137;
+	line-height: 42rpx;
+	margin-right: 30rpx;
+	padding: 0;
+	float: right;
+}
+.userCenter .footer{
+	background-color: #f1f2f6;
+	padding-top: 60rpx;
+	padding-bottom: 60rpx;
+	/*display: flex;
+	justify-content: center;
+	align-items: center;*/
+}
+.userCenter .name,.userCenter .version{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.userCenter .name text{
+	font-size: 28rpx;
+	font-family: "PingFangSC";
+	color: #0f161e;
+	display: block;
+}
+.userCenter .version text{
+	font-size: 24rpx;
+	font-family: "PingFangSC-Regular";
+	color: #aaa9ae;
+	margin-top:20rpx;
+}
