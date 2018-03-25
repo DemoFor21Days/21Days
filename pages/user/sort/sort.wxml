@@ -10,7 +10,7 @@
 		  		<image wx:if="{{index<=2 && index==0}}" class="winning" src="../../../images/firstWinner.png"/>
 		  		<image wx:if="{{index<=2 && index==1}}" class="winning" src="../../../images/secondWinner.png"/>
 		  		<image wx:if="{{index<=2 && index==2}}" class="winning" src="../../../images/thirdWinner.png"/>
-		  		<text style="margin-right: 30rpx;" wx:if="{{index>=3}}">{{index+1}}</text>
+		  		<text style="margin-right: 15rpx;margin-left:15rpx" wx:if="{{index>=3}}">{{index+1}}</text>
 		  		<image class="portrait" src="../../../images/person.png"/>
 		  		<text class="cont">{{item.content}}</text>
 	  		</view>
@@ -43,7 +43,7 @@
 		  		<image wx:if="{{index<=2 && index==0}}" class="winning" src="../../../images/firstWinner.png"/>
 		  		<image wx:if="{{index<=2 && index==1}}" class="winning" src="../../../images/secondWinner.png"/>
 		  		<image wx:if="{{index<=2 && index==2}}" class="winning" src="../../../images/thirdWinner.png"/>
-		  		<text wx:if="{{index>=3}}">{{index+1}}</text>
+		  		<text style="margin-right: 15rpx;margin-left:15rpx" wx:if="{{index>=3}}">{{index+1}}</text>
 		  		<image class="portrait" src="../../../images/person.png"/>
 		  		<text class="cont">{{item.content}}</text>
 	  		</view>

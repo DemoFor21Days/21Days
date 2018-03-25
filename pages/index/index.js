@@ -175,14 +175,15 @@ const conf = {
     // 跳转到的图片索引 swiperIndex
     swiperIndex: 0 ,
     bindPunchCard:false,
-    bindPunchCardList:[],
+    // bindPunchCardList:[],
     mustChoise: true,
     editbindPunchCard:false,
     sliderNumber:'1',
+    progress_txt: '正在匹配中...',  
     dataLists:{
       name:'员工领导力培训',
-      processTime:'11/12',
-      totalTime:'21',
+      processTime:'5',
+      totalTime:'12',
       stage:[{
         stateName:'时间管理1',
         stageTime:'3.14',
@@ -259,6 +260,33 @@ const conf = {
     dataListsStageIndex:'1',
     projectName:''
   },
+  drawProgressbg: function(){
+     // 使用 wx.createContext 获取绘图上下文 context
+     var ctx = wx.createCanvasContext('canvasProgressbg')
+     ctx.setLineWidth(4);// 设置圆环的宽度
+     ctx.setStrokeStyle('#8196c2'); // 设置圆环的颜色
+     ctx.setLineCap('round') // 设置圆环端点的形状
+     ctx.beginPath();//开始一个新的路径
+     ctx.arc(24.5, 24.5, 23, 0, 2 * Math.PI, false);
+     //设置一个原点(100,100)，半径为90的圆的路径到当前路径
+     ctx.stroke();//对当前路径进行描边
+     ctx.draw();
+   },
+   drawCircle: function (step){  
+     var context = wx.createCanvasContext('canvasProgress');
+       context.setLineWidth(4);
+       context.setStrokeStyle('#ffffff');
+       context.setLineCap('round')
+       context.beginPath();
+       // 参数step 为绘制的圆环周长，从0到2为一周 。 -Math.PI / 2 将起始角设在12点钟位置 ，结束角 通过改变 step 的值确定
+       context.arc(24.5, 24.5, 23, -Math.PI / 2, step * Math.PI - Math.PI / 2, false);
+       context.stroke();
+       context.draw()
+   },
+  onReady: function () {
+      this.drawProgressbg();
+      this.drawCircle(this.data.dataLists.processTime/this.data.dataLists.totalTime*2)
+   },
   onLoad(option){
     this.initSwiper()
     console.log(option.projectName)

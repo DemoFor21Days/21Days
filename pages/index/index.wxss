@@ -92,12 +92,7 @@ page{
   margin-top: 23rpx;
   background-color: white;
 }
-.progress{
-  position: absolute;
-  right: 30rpx;
-  top: 20rpx;
-  text-align: center;
-}
+
 .progress text{
   font-family: "PingFangSC-Regular";
   display: block;
@@ -1024,3 +1019,74 @@ page {
   text-align: center ;
 
 }
+
+
+
+
+
+.progress{
+  position: absolute;
+  right: 30rpx;
+  top: 20rpx;
+  text-align: center;
+}
+
+
+.progress_box{
+
+ /*position: relative;*/
+
+ width:90rpx;
+
+ height: 90rpx;  
+
+ display: flex;  
+
+ align-items: center;
+
+ justify-content: center;
+
+ /*background-color: #eee;*/
+
+}
+
+.progress_bg{
+
+ position: absolute;
+
+width:90rpx;
+
+ height: 90rpx;
+
+}
+
+.progress_canvas{
+
+ width:90rpx;
+
+ height: 90rpx;
+
+}
+
+.progress_text{
+
+ position: absolute;
+
+ display: flex;  
+
+ align-items: center;
+
+ justify-content: center
+
+}
+
+.progress_info{  
+
+ /*font-size: 36rpx;*/
+
+ /*padding-left: -16rpx;*/
+
+ /*letter-spacing: 2rpx*/
+
+}
+

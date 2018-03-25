@@ -1,8 +1,8 @@
 {
   "pages":[
+    "pages/index/index",
     "pages/user/sort/sort",
     "pages/index/addPunchCard/addPunchCard",
-    "pages/index/index",
     "pages/index/addProject/addProject",
     "pages/index/historyPunchCard/historyPunchCard",
     "pages/user/user",
