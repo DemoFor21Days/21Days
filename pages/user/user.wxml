@@ -7,7 +7,7 @@
 					<image class="userImg" src="{{userInfoImg}}"/>
 				</view>
 				<view class="content">
-					<text>牛仔裤褪色了</text>
+					<text>{{userNickName}}</text>
 				</view>
 				<view class="position">
 					<text>管理员</text>
@@ -16,7 +16,7 @@
 			<!-- <view class="background">
 			</view> -->
 			<view class="slot">
-				<view class="one">
+				<view bindtap="personalFunc" class="one">
 					<!-- <view> -->
 						<image src="../../images/userSetting.png"/>
 					<!-- </view> -->

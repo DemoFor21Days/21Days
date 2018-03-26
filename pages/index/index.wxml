@@ -107,7 +107,7 @@
           <!-- 时间轴 -->
           <view wx:for="{{dataLists.stage}}" wx:key="{{index}}">
             <view data-index="{{index}}" data-location="{{item.location}}" bindtap="bindPunchCard" wx:if="{{item.stageIndex == dataListsStageIndex}}" class="projectProgress">
-              <image class="img" src=""/>
+              <image class="img" src="../../images/projectName.png"/>
               <text class="stageName">{{item.stateName}}</text>
               <button>{{item.stageStage}}</button>
               <image class="location" wx:if="{{item.location}}" src="../../images/location.png"/>
@@ -164,7 +164,7 @@
             <view style="overflow: hidden;">
               <text>需参加打卡数量</text>
               <!-- show-value -->
-              <slider class="slider" value="{{sliderNumber}}" bindchange="sliderChange" min="1" max="{{punchCardList.length}}"/>
+              <slider class="slider" value="{{sliderNumber}}" bindchange="sliderChange" min="1" max="{{punchCardList.clockers.length}}"/>
               <text class="sliderContent">{{sliderNumber}}个</text>
             </view>
             <button bindtap="editFinshFunc" class="editFinish" type="primary">编辑完成</button>

@@ -179,7 +179,6 @@ const conf = {
     mustChoise: true,
     editbindPunchCard:false,
     sliderNumber:'1',
-    progress_txt: '正在匹配中...',  
     dataLists:{
       name:'员工领导力培训',
       processTime:'5',
@@ -282,11 +281,26 @@ const conf = {
        context.arc(24.5, 24.5, 23, -Math.PI / 2, step * Math.PI - Math.PI / 2, false);
        context.stroke();
        context.draw()
-   },
+  },
   onReady: function () {
       this.drawProgressbg();
       this.drawCircle(this.data.dataLists.processTime/this.data.dataLists.totalTime*2)
-   },
+  },
+  //下拉刷新
+  onPullDownRefresh:function(){
+    // wx.showNavigationBarLoading() //在标题栏中显示加载
+    wx.showLoading({
+      title: '加载中',
+    })
+    //模拟加载
+    setTimeout(function()
+    {
+      // complete
+      // wx.hideNavigationBarLoading() //完成停止加载
+      wx.hideLoading()
+      wx.stopPullDownRefresh() //停止下拉刷新
+    },1500);
+  },
   onLoad(option){
     this.initSwiper()
     console.log(option.projectName)

@@ -1,0 +1,17 @@
+[{
+	"content": "乔布斯是偶像1",
+	"integralNumber": 60,
+	"showOperation": false
+}, {
+	"content": "乔布斯是偶像1",
+	"integralNumber": 60,
+	"showOperation": false
+}, {
+	"content": "乔布斯是偶像1",
+	"integralNumber": 60,
+	"showOperation": false
+}, {
+	"content": "乔布斯是偶像1",
+	"integralNumber": 10,
+	"showOperation": false
+}]

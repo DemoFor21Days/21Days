@@ -1,0 +1,6 @@
+{
+	"projectName": "员工领导力 来自模拟数据",
+	"companyName": "阿里巴巴网络科技(上海)有限公司",
+	"companyImg": "../../../images/projectCmpName.png",
+	"QRCode": "https://gss0.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/342ac65c1038534399e24cbd9113b07eca808879.jpg"
+}

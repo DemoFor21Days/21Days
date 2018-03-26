@@ -30,24 +30,18 @@ Page({
       console.log(this.data.contentList)
     },
     onLoad(){
-      this.setData({
-        contentList:[{
-          'content':'乔布斯是偶像',
-          'integralNumber':60,
-          'showOperation':false
-        },{
-          'content':'我要权限',
-          'integralNumber':60,
-          'showOperation':false
-        },{
-          'content':'啦啦啦',
-          'integralNumber':60,
-          'showOperation':false
-        },{
-          'content':'aaa',
-          'integralNumber':10,
-          'showOperation':false
-        }]
+      var self = this
+      wx.request({
+        url: 'http://192.168.0.101:3000/mock/user/sort', //仅为示例，并非真实的接口地址
+        data: {},
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success: function(res) {
+          self.setData({
+            contentList:res.data
+          })
+        }
       })
     }
 })

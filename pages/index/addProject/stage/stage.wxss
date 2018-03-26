@@ -156,11 +156,15 @@
 .publish{
 	margin-top: 20rpx;
 	height: 92rpx;
-	border-radius: 5rpx;
-	background-color: #3bb35b;
+	background: #00c6ae;
 	font-size: 36rpx;
 	font-family: "PingFangSC-Regular";
 	margin-bottom: 30rpx;
 	margin-left: 30rpx;
 	margin-right: 30rpx;
+	color: white;
+}
+.publish::after{
+	border-radius: 5rpx;
+	border:0;
 }

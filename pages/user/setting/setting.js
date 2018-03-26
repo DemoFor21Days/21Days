@@ -4,22 +4,24 @@ const app = getApp()
 Page({
   data: {
   	checked:true,
-  	changeSetting:false,
-  	lists: [{
-      "name" : "CN",
-    	"inputTitle" : '公司名称:',
-    	"placeholder" : "请输入公司名称",
-      "maxlength" : "5",
-      "type": "text",
-      "img":"../../../images/projectCmpName.png"
-    },{
-      "name" : "PN",
-    	"inputTitle" : '项目名称:',
-    	"placeholder" : "请输入项目名称",
-      "maxlength" : "10",
-      "type": "text",
-      "img":"../../../images/projeectName.png"
-    }]
+  	changeSetting:false
+  },
+  onLoad:function(){
+    var self = this
+    wx.request({
+        url: 'http://192.168.0.101:3000/mock/user/setting', //仅为示例，并非真实的接口地址
+        data: {
+          createBy:app.globalData.userInfo.nickName
+        },
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success: function(res) {
+          self.setData({
+            dataLists:res.data
+          })
+        }
+      })
   },
   checkCode:function(){
   	this.data.checked = !this.data.checked

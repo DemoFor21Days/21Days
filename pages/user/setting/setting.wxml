@@ -1,14 +1,14 @@
 <view class="setting">
 	<view class="lists">
 		<view class="img">
-			<image src=""/>
+			<image src="{{dataLists.companyImg}}"/>
 		</view>
 		<view class="content">
 			<view class="title">
-				<text>员工领导力培训</text>
+				<text>{{dataLists.projectName}}</text>
 			</view>
 			<view class="name">
-				<text>阿里巴巴网络科技(上海)有限公司</text>
+				<text>{{dataLists.companyName}}</text>
 				</view>
 		</view>
 		<view class="edit">
@@ -23,7 +23,7 @@
 		  </view>
 		</view>
 		<view wx:else style="position: relative;">
-			<image src="" style="width:400rpx;height:400rpx;"/>
+			<image src="{{dataLists.QRCode}}" style="width:400rpx;height:400rpx;"/>
 		  <view bindtap="checkCode" class="navigator-arrow hide"></view>
 		</view>
 	</view>
@@ -36,7 +36,7 @@
 					<text class="leftTitle">公司名称</text>
 				</view>
 			<!-- </view> -->
-			<input placeholder="请输入公司名称" />
+			<input placeholder="请输入公司名称" value="{{dataLists.companyName}}"/>
 		</view>
 		<view class="editContent">
 			<!-- <view class="left"> -->
@@ -45,7 +45,7 @@
 					<text class="leftTitle">项目名称</text>
 				</view>
 			<!-- </view> -->
-			<input placeholder="请输入项目名称" />
+			<input placeholder="请输入项目名称" value="{{dataLists.projectName}}"/>
 		</view>
 		<view class="operation">
 			<button class="delete">删除该公司</button>

@@ -1,7 +1,7 @@
 .setting image{
 	width:42rpx;
 	height: 42rpx;
-	border: 1rpx solid red;
+	/*border: 1rpx solid red;*/
 	margin-left: 30rpx;
 	margin-right: 20rpx;
 }

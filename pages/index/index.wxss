@@ -65,9 +65,9 @@ page{
   float: right;
 }
 .projectProgress .img{
-  width: 34rpx;
-  height: 37rpx;
-  border: 1rpx solid red;
+  width: 43rpx;
+  height: 36rpx;
+  /*border: 1rpx solid red;*/
   float: left;
   margin-top: 23rpx;
 }
@@ -86,13 +86,16 @@ page{
   padding: 0;
   font-size: 24rpx;
   font-family: "PingFangSC-Regular";
-  color: #00c63e;
-  border: 1rpx solid #00c6ae;
+  color: #00c6ad;
   margin-left: 20rpx;
   margin-top: 23rpx;
   background-color: white;
+  border-radius: 5rpx;
 }
-
+.projectProgress button::after{
+  border: 1rpx solid #00c6ad;
+  border-radius: 5rpx;
+}
 .progress text{
   font-family: "PingFangSC-Regular";
   display: block;
@@ -114,7 +117,7 @@ page{
 .hasProject .projectStatus .header{
   padding-left: 30rpx;
   padding-right: 30rpx;
-  border-bottom: 1rpx solid #aaa9ae;
+  border-bottom: 1rpx solid #e5e5e5;
   overflow: hidden;
   height: 100rpx;
   line-height: 100rpx;
@@ -410,6 +413,9 @@ page{
   color: white;
   margin-top: 52rpx;
   margin-bottom: 40rpx;
+}
+.hasProject .punchCard .punchCardNumber .editFinish::after{
+  border:0;
 }
 .indexMain {
   display: flex;
@@ -850,10 +856,10 @@ page {
   /*background-color: rgba(255,255,255,0.2);*/
  }
 .card-item0{
-  background-color: #DFE9FB;
+  background-color: #4b69a8;
  }
  .card-item1{
-  background-color: #DCEFE0;
+  background-color: #00c6ad;
  }
 .card-item .timePic{
   width: 42rpx;
@@ -872,7 +878,7 @@ page {
 .card-item .issue text{
   float: left;
   font-size: 32rpx;
-  color:#0f161e;
+  color:white;
   font-family: "PingFangSC-Regular";
 }
 .card-item .location{
@@ -888,24 +894,26 @@ page {
   bottom:-40rpx;
   left:84rpx;
   font-size: 28rpx;
-  color:#0f161e;
+  color:white;
   font-family: "PingFangSC-Regular";
  }
  .card-item .status{
-  border-radius: 50%;
   font-family: "PingFangSC-Regular";
   font-size: 22rpx;
-  color: #4286f5;
+  color: white;
   width: 60rpx;
   height: 60rpx;
   line-height: 60rpx;
   text-align: center;
-  background-color: #DFE9FB;
-  border: 1rpx solid #4286f5;
+  background-color: transparent;
   padding: 0;
   margin-top: 66rpx;
   margin-right: 20rpx;
  }
+  .card-item .status::after{
+    border: 1rpx solid white;
+    border-radius: 100%;
+  }
  .card-item:nth-child(1){
     margin: 0;
     margin-left: 30rpx;

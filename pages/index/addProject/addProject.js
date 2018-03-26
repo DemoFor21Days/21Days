@@ -33,6 +33,9 @@ Page({
       projectDescription:''
     }
   },
+  onLoad:function(option){
+    console.log(option)
+  },
   getInputVal: function(e) {
     this.data.submitAllData.push(e.detail)
     this.setData({
