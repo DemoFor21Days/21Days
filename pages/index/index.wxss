@@ -154,6 +154,7 @@ page{
 .hasProject .projectStatus .header .right::after{  
   border:0;  
   border-left: 1rpx solid #aaa9ae;
+  border-radius: 0;
 }
 .order_process {
   display: flex;

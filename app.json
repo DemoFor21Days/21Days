@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/user/user",
     "pages/index/index",
+    "pages/user/user",
     "pages/user/setting/setting",
     "pages/user/sort/sort",
     "pages/index/historyPunchCard/historyPunchCard",

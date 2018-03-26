@@ -132,8 +132,9 @@
               <button bindtap="historyPunchCardFunc" class="choseFromHistory">
                 <text class="addIcon">+</text>
                 <text>从打卡历史中选择</text>
-            </button>
+              </button>
             </view>
+          </view>
           <view class="stage">
             <view class="stageHead">
               <text>阶段一</text>
@@ -167,7 +168,6 @@
               <text class="sliderContent">{{sliderNumber}}个</text>
             </view>
             <button bindtap="editFinshFunc" class="editFinish" type="primary">编辑完成</button>
-          </view>
           </view>
         </view>
         <!-- <view wx:else style="height: 378rpx;background-color: #f1f2f6">
