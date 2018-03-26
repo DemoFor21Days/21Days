@@ -4,42 +4,49 @@
 .userCenter .header{
 	height: 475rpx;
 	/*width: 1000rpx;*/
-	background-color: #608FED;
+	/*background-color: #608FED;*/
+	background-color: transparent;
+	/*background: url('../../images/userBackground.png');*/
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
+	flex-direction: column;
+	/*z-index: 1;*/
+	/*position: relative;*/
 }
 
-/*.userCenter .background{
-	height: 79rpx;
-	border-bottom-left-radius: 100%;
-	border-bottom-right-radius: 100%;
-	background-color: #608FED;
-	margin-top: -6rpx;
-	box-shadow:0 20rpx 0 rgba(255,255,255,0.2);
-}*/
-.userCenter .header image{
+.userCenter .header .userImg{
 	width: 184rpx;
 	height: 184rpx;
+	border-radius: 50%;
 	/*border: 1rpx solid black;*/
+}
+.userCenter .header .background{
+	position: absolute;
+	z-index: 0;
+	width: 100%;
+	height: 475rpx;
 }
 .userCenter .header .tx{
 	/*padding-top: 16rpx;*/
 }
-/*.userCenter .header .tx,.userCenter .header .content{
+.userCenter .header .tx,.userCenter .header .content{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}*/
+	position: relative;
+	z-index: 1
+}
 .userCenter .header .content{
-	/*margin-top: 30rpx;
+	margin-top: 30rpx;
 	font-size: 36rpx;
 	font-family: "PingFangSC";
-	color: white;*/
+	color: white;
+	position: relative;
+	z-index: 1
 	/*color: */
 }
-/*.userCenter .header  .position{
+.userCenter .header  .position{
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -47,7 +54,10 @@
 	font-size: 28rpx;
 	font-family: "PingFangSC";
 	color: white;
-}*/
+	margin-bottom: 80rpx;
+	position: relative;
+	z-index: 1;
+}
 .userCenter .slot{
 	/*display: flex;
 	justify-content: center;

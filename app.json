@@ -1,9 +1,9 @@
 {
   "pages":[
+    "pages/user/user",
     "pages/index/index",
     "pages/user/setting/setting",
     "pages/user/sort/sort",
-    "pages/user/user",
     "pages/index/historyPunchCard/historyPunchCard",
     "pages/index/addProject/addProject",
     "pages/index/addPunchCard/addPunchCard",

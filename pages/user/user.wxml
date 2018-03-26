@@ -2,17 +2,19 @@
 	<view>
 		<view style="position: relative;">
 			<view class="header">
+				<image class="background" src="../../images/userBackground.png"/>
 				<view class="tx">
-					<image src="{{userInfoImg}}"/>
+					<image class="userImg" src="{{userInfoImg}}"/>
 				</view>
-				<!-- <view class="content">
+				<view class="content">
 					<text>牛仔裤褪色了</text>
-				</view> -->
-				<!-- <view class="position">
+				</view>
+				<view class="position">
 					<text>管理员</text>
-				</view> -->
+				</view>
 			</view>
-			<!-- <view class="background"></view> -->
+			<!-- <view class="background">
+			</view> -->
 			<view class="slot">
 				<view class="one">
 					<!-- <view> -->
