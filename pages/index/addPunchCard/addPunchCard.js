@@ -46,10 +46,20 @@ Page({
   },
   onLoad:function(option) {
     console.log(option.projectName)
+    console.log(option.operation)
     console.log(option.id)
     this.setData({
       'dataLists.projectName': option.projectName
     })
+    if (option.operation === 'new'){
+      wx.setNavigationBarTitle({
+        title: '新建打卡'
+      })
+    } else{
+      wx.setNavigationBarTitle({
+        title: '修改打卡'
+      })
+    }
     // 发送请求 id
   },
   getInputVal: function(e) {

@@ -40,7 +40,6 @@ Page({
     })
   },
   onLoad(option){
-    console.log('here')
     console.log(option.submitData)
     option.submitData = JSON.parse(option.submitData)
     // submitData={"companyName":"1","name":"2","beginTime":"2018-05-23","endTime":"2018-06-23","intro":"","mediaIds":1,"createBy":"apart"}

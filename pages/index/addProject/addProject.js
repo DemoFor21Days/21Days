@@ -2,6 +2,7 @@
 //获取应用实例
 const app = getApp()
 const uploadFileUrl = require('../../../config').uploadFileUrl
+// const utils = require('../../../utils/util');
 Page({
   data: {
     lists: [{
@@ -34,7 +35,21 @@ Page({
     }
   },
   onLoad:function(option){
-    console.log(option)
+    console.log(option.operation)
+    if(option.operation === 'new') {
+      wx.setNavigationBarTitle({
+        title: '创建项目'
+      })
+    } else {
+      wx.setNavigationBarTitle({
+        title: '修改项目'
+      })
+    }
+    
+    
+    // console.log('onLoad getPageInstance')
+    // console.log(utils.getPageInstance())
+    
   },
   getInputVal: function(e) {
     this.data.submitAllData.push(e.detail)
@@ -77,18 +92,6 @@ Page({
         }
       }
     }
-    // this.data.submitData['beginTime'] = this.data.beginTime
-    // this.data.submitData['endTime'] = this.data.endTime
-    // this.data.submitData['intro'] = e.detail.value.textarea
-    // this.data.submitData['mediaIds'] = ''
-    // this.setData({
-    //   submitData:{
-    //     'beginTime':this.data.beginTime,
-    //     "endTime":this.data.endTime,
-    //     'intro':e.detail.value.textarea,
-    //     'mediaIds':1
-    //   }
-    // })
     this.setData({'submitData.beginTime':this.data.dataLists.beginTime})
     this.setData({'submitData.endTime':this.data.dataLists.endTime})
     this.setData({'submitData.intro':e.detail.value.textarea})
