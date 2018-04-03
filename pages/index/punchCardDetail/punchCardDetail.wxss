@@ -1,0 +1,100 @@
+.punchCardDetail .banner{
+	width: 100%;
+	height: 220rpx;
+}
+.punchCardDetail .banner image{
+	width: 100%;
+	height: 100%;
+}
+.punchCardDetail .title{
+	height: 95rpx;
+	line-height: 95rpx;
+	padding-left: 30rpx;
+	background-color: #f3f5f9;
+}
+.punchCardDetail .title text{
+	font-size: 36rpx;
+	font-family: "PingFangSC-Medium"
+}
+.punchCardDetail .state .stateHeader{
+	height: 105rpx;	
+	line-height: 105rpx;
+	margin-left: 30rpx;
+	margin-right: 30rpx;
+	border-bottom: 1rpx solid #e5e5e5;
+}
+.punchCardDetail .state .stateHeader text{
+	font-size: 32rpx;
+}
+.punchCardDetail .state .stateContent{
+	height: 154rpx;
+	line-height: 154rpx;
+	display: flex;
+	flex-direction: row;
+}
+.punchCardDetail .state .stateContent .content{
+	width: 50%;
+	/*display: flex;
+	flex-direction: column;*/
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+
+}
+.punchCardDetail .intro{
+	border-top: 20rpx solid #f3f5f9;
+	border-bottom: 20rpx solid #f3f5f9;
+	height: 87rpx;
+	line-height: 87rpx;
+}
+.punchCardDetail .intro text{
+	font-size: 28rpx;
+}
+.thumbs{
+	margin-left: 30rpx;
+	padding-left: 30rpx;
+	margin-right: 30rpx;
+	background-color: #f5f5f5;
+}
+.thumbs .thumbsUp{
+	display: flex;
+	align-items: center;
+	border-bottom:1rpx solid #e5e5e5;
+}
+.thumbs .comment{
+	padding-left: 29rpx;
+	margin-left: 30rpx;
+	margin-right: 30rpx;
+	display: flex;
+	border-bottom:1rpx solid #e5e5e5;
+	padding-bottom:30rpx;
+	margin-bottom:30rpx;
+}
+.thumbs .comment:last-child{
+	border-bottom: 0;
+}
+.thumbs .comment .name{
+	font-size: 24rpx;
+	font-family: "PingFangSC-Medium";
+	color: #4b69a8;
+}
+.thumbs .comment .content{
+	font-size: 24rpx;
+	font-family: "PingFangSC-Medium";
+}
+.punchCardDetail .enterPunchCard{
+	background-color: #f3f5f9;
+	padding-left: 30rpx;
+	padding-right: 30rpx;
+	padding-bottom: 30rpx;
+	padding-top: 60rpx;
+}
+.punchCardDetail .enterPunchCard button{
+	color: white;
+	background-color: #00c6ae;
+}
+.punchCardDetail .enterPunchCard button::after{
+	border-radius: 5rpx;
+	border:0;
+}

@@ -1,195 +1,323 @@
-<view class="main" style='background-color:{{hasProject ? "#f1f2f6" : "white"}}'>
-  <!-- <view class="userinfo">
-    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view> -->
-  <!-- 头部 start -->
-  <view wx:if="{{hasUserInfo}}" class="userInfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"/>
+<import src="../components/messageBox/messageBox.wxml"/>
+<template is="messageBox" data="{{..._messageBox_}}">
+</template>
+<view wx-if="{{isManager || (!isManager && codeSuccess)}}">
+  <view class="main" style='background-color:{{hasProject ? "#f1f2f6" : "white"}}'>
+    <!-- 头部 start -->
+    <view wx:if="{{hasUserInfo}}" class="userInfo">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"/>
+      <view wx:if="{{isManager || childrenManager}}">
+        <text class="userInfoNickName">{{userInfo.nickName}}管理员,你好</text>
+        <text wx:if="{{dataLists.stage.length!=0}}" class="userDescription">欢迎来到{{projectName}}</text>
+        <text wx:else class="userDescription">欢迎来到本项目的学习地图</text>
+      </view>
+      <view wx:if="{{codeSuccess && !childrenManager && !isManager}}" style="display:flex;justify-content:center;align-items:center;">
+        <view>
+          <text class="userInfoNickName">{{childrenList.projectName}}</text>
+          <text class="userDescription">{{childrenList.companyName}}</text>
+        </view>
+        <text class="userChildrenTime">2018/02/10-2018/03/20</text>
+      </view>
+      <view wx:if="{{isManager || childrenManager}}" class='progress progress_box'>
+         <canvas class="progress_bg"   canvas-id="canvasProgressbg">  </canvas>
+         <canvas class="progress_canvas"   canvas-id="canvasProgress">  </canvas>
+         <view class="progress_text">
+             <text class='content progress_info'>{{dataLists.processTime}}/{{dataLists.totalTime}}</text>
+         </view>    
+      </view>
+    </view>
+    <!-- 头部 end -->
+    <!-- 内容 start -->
     <view>
-      <text class="userInfoNickName">{{userInfo.nickName}}管理员,你好</text>
-      <text wx:if="{{dataLists.stage.length!=0}}" class="userDescription">欢迎来到{{projectName}}</text>
-      <text wx:else class="userDescription">欢迎来到本项目的学习地图</text>
-    </view>
-    <!-- <view class="progress" wx:if="{{dataLists.stage.length!=0}}">
-      <text class="content">{{dataLists.processTime}}</text>
-      <text class="static">进度</text>
-    </view> -->
-    <view class='progress progress_box'>
-
-       <canvas class="progress_bg"   canvas-id="canvasProgressbg">  </canvas>
-
-       <canvas class="progress_canvas"   canvas-id="canvasProgress">  </canvas>
-
-       <view class="progress_text">
-
-           <!-- <view class="progress_dot"></view> -->
-
-           <text class='content progress_info'>{{dataLists.processTime}}/{{dataLists.totalTime}}</text>
-
-       </view>    
-
-    </view>
-  </view>
-  <!--进度圆圈-->
-
-<!-- 
-  <view class="container">
-
-    <view class='progress_box'>
-
-       <canvas class="progress_bg"   canvas-id="canvasProgressbg">  </canvas>
-
-       <canvas class="progress_canvas"   canvas-id="canvasProgress">  </canvas>
-
-       <view class="progress_text">
-
-           <view class="progress_dot"></view>
-
-           <text class='progress_info'> {{dataLists.processTime}}</text>
-
-       </view>    
-
-    </view>
-
-  </view> -->
-
-
-
-
-
-
-
-
-  <!-- 进度圆圈 结束 -->
-  <!-- 头部 end -->
-  
-  <!-- 内容 start -->
-  <view>
-    <view wx:if="{{dataLists.stage.length!=0}}">
-      <view class="hasProject">
-        <view class="projectStatus">
-          <view class="header">
-            <text class="left">阶段{{dataListsStageIndex}}</text>
-            <text class="date">({{dataLists.totalTime}}天)</text>
-            <button class="right" bindtap="editProject">编辑项目</button>
+      <view wx:if="{{dataLists.stage.length!=0}}">
+        <view class="hasProject">
+          <view class="childrenDirectory" wx:if="{{codeSuccess && !childrenManager && !isManager}}">
+            <text>培训安排</text>
           </view>
-          <!-- 可播放列表展示 -->
-          <view>
-            <view class='swiper-container'>
-              
-              <view animation= "{{ swiperAnimationData }}" 
-              style='width:{{ swiperContainWidth + "rpx" }}' 
-              bindtouchstart='swiperTouchStart' 
-              bindtouchmove='swiperTouchMove' 
-              bindtouchend='swiperTouchEnd' 
-              class='card-swiper-box' 
-              >
-                <block wx:for='{{dataLists.stage}}' wx:key="{{index}}">
-                    <!-- <image src='{{item}}' class='card-item' ></image>  -->
-                    <view class="card-item {{dataLists.stage[index].status == 0 ? 'card-item0' : 'card-item1'}}">
-                      <image class="timePic" src="../../images/time.png" />
-                      <view class="issue">
-                        <text>{{dataLists.stage[index].stateName}}</text>
-                        <image wx:if="{{item.location}}" class="location" src="../../images/location.png" />
+          <view class="projectStatus">
+            <view class="header">
+              <text class="left">阶段{{dataListsStageIndex}}</text>
+              <text class="date">({{dataLists.totalTime}}天)</text>
+              <button wx:if="{{isManager}}" class="right" bindtap="editProject">编辑项目</button>
+            </view>
+            <!-- 可播放列表展示 -->
+            <view>
+              <view class='swiper-container'>
+                
+                <view animation= "{{ swiperAnimationData }}" 
+                style='width:{{ swiperContainWidth + "rpx" }}' 
+                bindtouchstart='swiperTouchStart' 
+                bindtouchmove='swiperTouchMove' 
+                bindtouchend='swiperTouchEnd' 
+                class='card-swiper-box' 
+                >
+                  <block wx:for='{{dataLists.stage}}' wx:key="{{index}}">
+                      <!-- <image src='{{item}}' class='card-item' ></image>  -->
+                      <view class="card-item {{dataLists.stage[index].status == 0 ? 'card-item0' : 'card-item1'}}">
+                        <image class="timePic" src="../../images/time.png" />
+                        <view class="issue">
+                          <text>{{dataLists.stage[index].stateName}}</text>
+                          <image wx:if="{{item.location}}" class="location" src="../../images/location.png" />
+                        </view>
+                        <text class="time">{{dataLists.stage[index].stageTime}}</text>
+                        <button class="status">{{dataLists.stage[index].stageStage}}</button>
                       </view>
-                      <text class="time">{{dataLists.stage[index].stageTime}}</text>
-                      <button class="status">{{dataLists.stage[index].stageStage}}</button>
+                  </block>
+                </view>
+              </view>
+            </view>
+            <!-- 可播放列表展示 -->
+            <!-- 时间轴 -->
+            <view wx:for="{{dataLists.stage}}" wx:key="{{index}}">
+              <view data-index="{{index}}" data-location="{{item.location}}" bindtap="bindPunchCard" wx:if="{{item.stageIndex == dataListsStageIndex}}" class="projectProgress">
+                <image class="img" src="../../images/projectName.png"/>
+                <text class="stageName">{{item.stateName}}</text>
+                <button>{{item.stageStage}}</button>
+                <image class="location" wx:if="{{item.location}}" src="../../images/location.png"/>
+                <text class="stageTime">{{item.stageTime}}</text>
+              </view>
+            </view>
+            <view wx:if="{{childrenManager}}" class="projectProgressSeeMore">
+              <text>查看更多</text>
+              <view class="navigatorSeeMore">
+                <view class="navigator">
+                  <view class="navigator-arrow show"></view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <!-- 打卡管理部分 -->
+          <view class="punchCard" wx:if="{{bindPunchCard && isManager}}">
+            <view class="header">
+              <text class="left">我管理的打卡</text>
+              <view class="left subTitle">
+                <text>学生需加入<text class="number">{{punchCardList.allNum}}</text>个,已加入</text><text class="number">{{punchCardList.neceNum}}</text>个
+              </view>
+              <view class="right">
+                <button bindtap="editPunchCard">编辑</button>
+              </view>
+            </view>
+            <view wx:if="{{!editbindPunchCard}}" class="content">
+              <view class="child">
+                <button class="addNew" bindtap="addNew">创建新的打卡项目</button>
+                <button bindtap="historyPunchCardFunc" class="choseFromHistory">
+                  <text class="addIcon">+</text>
+                  <text>从打卡历史中选择</text>
+                </button>
+              </view>
+            </view>
+            <view class="stage">
+              <view class="stageHead">
+                <text>阶段一</text>
+              </view>
+              <view wx:for="{{punchCardList.clockers}}" wx:key="{{index}}" style="overflow: hidden;margin-top: 30rpx;display: flex;align-items: center;padding-bottom: 30rpx;border-bottom: 1rpx solid #f1f2f6">
+                <image wx:if="{{editbindPunchCard}}" class="changeLocation" src="../../images/changeLocation.png"/>
+                <image class="stageImg" src=""/>
+                <view class="stageContent">
+                  <view class="stageContent-name">
+                    <text>{{item.name}}</text>
+                  </view>
+                  <view class="stageContent-content">
+                    <text>{{item.intro}}</text>
+                  </view>
+                  <view>
+                    <button style="border:1rpx solid {{mustChoise ? '#4b69a8;' : '#00c6ae;'}} color:{{mustChoise ? '#4b69a8;' : '#00c6ae;'}}" class="choise">必选</button>
+                    <button class="month">月打卡</button>
+                  </view>
+                </view>
+                <view class="operation">
+                  <image data-id="{{item.id}}" bindtap="deletePunchCardIdFunc" wx:if="{{!editbindPunchCard}}" src="../../images/delete.png"/>
+                  <image bindtap="editPunchCardIdFunc" data-id="{{item.id}}" class="edit" wx:else src="../../images/edit.png"/>
+                </view>
+              </view>
+            </view>
+            <view wx:if="{{editbindPunchCard}}" class="punchCardNumber">
+              <view style="overflow: hidden;">
+                <text>需参加打卡数量</text>
+                <!-- show-value -->
+                <slider class="slider" value="{{sliderNumber}}" bindchange="sliderChange" min="1" max="{{punchCardList.clockers.length}}"/>
+                <text class="sliderContent">{{sliderNumber}}个</text>
+              </view>
+              <button bindtap="editFinshFunc" class="editFinish" type="primary">编辑完成</button>
+            </view>
+          </view>
+          <!-- 学生打卡管理部分 -->
+          <view class="punchCard" wx:if="{{bindChildrenPunchCard && childrenManager}}">
+             <view class="header">
+              <text class="left">我加入的打卡</text>
+              <view class="left subTitle">
+                <text>需加入<text class="number">{{childrenPunchCardList.allNum}}</text>个,已加入</text><text class="number">{{childrenPunchCardList.neceNum}}</text>个
+              </view>
+              <view class="right" style="margin-right:0;margin-top:0" wx:if="{{childrenPunchCardList.singlePersionPunchCard.length != 0}}">
+                <text style="border-left:1rpx solid #e5e5e5;padding-left:30rpx;color:#4b69a8;font-size: 28rpx;font-family: 'PingFangSC-Regular'">全部</text>
+              </view>
+            </view>
+            <view class="content childrenContent" wx:if="{{childrenPunchCardList.singlePersionPunchCard.length == 0}}">
+              <image style="height:133rpx;width: 133rpx;" src="../../images/noProject.png"/>
+              <text style="font-family: 'PingFangSC-Regular';font-size: 28rpx;margin-top:32rpx;">还未加入打卡活动</text>
+            </view>
+            <view class="content" style="height: 84rpx;" wx:else>
+              <!-- 学生打卡水平时间轴 -->
+              <view class='order_process'>
+                <view class='process_wrap' wx:for="{{processData}}" wx:key="{{index}}">
+                  <view class='process'>
+                    <block>
+                      <view class='process_line' style="background:{{item.start}}"></view>
+                      <image bindtap="bindPunchCard" class='process_icon' src="../../images/timerShaft.png"></image>
+                      <image wx:if="{{bindPunchCard}}" class="location" src="../../images/location.png" />
+                      <view class='process_line' style="background:{{item.end}}">
+                      </view>
+                    </block>
+                  </view>
+                  <text class='process_name'>{{item.name}}</text>
+                  <text class='process_name_bottom'>{{item.time}}</text>
+                </view>
+              </view>
+            </view>
+            <!-- 学生 -->
+            <view wx:if="{{childrenPunchCardList.singlePersionPunchCard.length != 0}}" class="stage">
+              <view class="stageHead">
+                <text>阶段一</text>
+              </view>
+              <view class="item-list" wx:for="{{childrenPunchCardList.singlePersionPunchCard}}" style="overflow: hidden;margin-top: 30rpx;display: flex;align-items: center;padding-bottom: 30rpx;border-bottom: 1rpx solid #f1f2f6" wx:key="{{index}}" >
+                <view class="item-info" data-index="{{index}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style="left:{{item.left + 'rpx'}}">
+                  <image wx:if="{{editbindPunchCard}}" class="changeLocation" src="../../images/changeLocation.png"/>
+                  <image style="width:240rpx;height:180rpx;" class="stageImg" src=""/>
+                  <view class="stageContent">
+                    <view class="stageContent-name">
+                      <text>{{item.name}}</text>
                     </view>
-                </block>
+                    <view class="stageContent-content">
+                      <text>{{item.intro}}</text>
+                    </view>
+                    <view class="stageContent-content">
+                      <text>{{item.enter}}人参加 | {{item.count}}次打卡</text>
+                    </view>
+                    <view>
+                      <button style="border:1rpx solid {{mustChoise ? '#4b69a8;' : '#00c6ae;'}} color:{{mustChoise ? '#4b69a8;' : '#00c6ae;'}}" class="choise">{{item.necessary ? '必选':'不必选'}}</button>
+                      <button class="month">{{item.stage}}</button>
+                    </view>
+                  </view>
+                  <view class="operation" style="margin-left:30rpx;">
+                    <button wx:if="{{item.punchCardStatus}}" class="punchCardStatusTrue">已打卡</button>
+                    <button wx:else class="punchCardStatusFalse">打卡</button>
+                  </view>
+                </view>
+                <view class="item-oper">
+                    <view class="oper-delete" bindtap="itemDelete" data-index="{{index}}">
+                      <image style="width:43rpx;height:43rpx;" src="../../images/whiteDelete.png"/>
+                    </view>
+                </view>
+              </view>
+            </view>
+            <view class="stage">
+              <view class="stageHead">
+                <text>打卡活动列表</text>
+              </view>
+              <view bindtap="punchCardDetailFunc" wx:for="{{childrenPunchCardList.clockers}}" wx:key="{{index}}" style="overflow: hidden;margin-top: 30rpx;display: flex;align-items: center;padding-bottom: 30rpx;border-bottom: 1rpx solid #f1f2f6">
+                <image wx:if="{{editbindPunchCard}}" class="changeLocation" src="../../images/changeLocation.png"/>
+                <image style="width:240rpx;height:180rpx;" class="stageImg" src=""/>
+                <view class="stageContent">
+                  <view class="stageContent-name">
+                    <text>{{item.name}}</text>
+                  </view>
+                  <view class="stageContent-content">
+                    <text>{{item.intro}}</text>
+                  </view>
+                  <view class="stageContent-content">
+                    <text>{{item.enter}}人参加 | {{item.count}}次打卡</text>
+                  </view>
+                  <view>
+                    <button style="border:1rpx solid {{mustChoise ? '#4b69a8;' : '#00c6ae;'}} color:{{mustChoise ? '#4b69a8;' : '#00c6ae;'}}" class="choise">必选</button>
+                    <button class="month">{{item.stage}}</button>
+                  </view>
+                </view>
               </view>
             </view>
           </view>
-          <!-- 可播放列表展示 -->
-          <!-- 时间轴 -->
-          <view wx:for="{{dataLists.stage}}" wx:key="{{index}}">
-            <view data-index="{{index}}" data-location="{{item.location}}" bindtap="bindPunchCard" wx:if="{{item.stageIndex == dataListsStageIndex}}" class="projectProgress">
-              <image class="img" src="../../images/projectName.png"/>
-              <text class="stageName">{{item.stateName}}</text>
-              <button>{{item.stageStage}}</button>
-              <image class="location" wx:if="{{item.location}}" src="../../images/location.png"/>
-              <text class="stageTime">{{item.stageTime}}</text>
+          <view class="childrenNavigator" wx:if="{{codeSuccess && !childrenManager && !isManager}}">
+            <view class="navigator">
+              <view class="navigator-arrow show"></view>
+            </view>
+          </view>
+          <view class="childrenIntro" wx:if="{{codeSuccess && !childrenManager && !isManager}}">
+            <view class="childrenDirectory">
+              <text>简介</text>
+            </view>
+            <view class="childrenProjectIntro">
+              <text>{{childrenList.projectIntro}}</text>
+              <view class="QRCode">
+                <image src="{{childrenList.projectORCode}}"/>
+              </view>
+              <button class="childrenEnter" bindtap="childrenEnterFunc">加入</button>
+            </view>
+          </view>
+          <!-- 学生 纵向时间轴 -->
+          <view wx-if="{{childrenManager && !bindChildrenPunchCard}}" style="background-color: #f3f5f9">
+            <view wx:for="{{childrenArticleList}}" wx:key="key">
+              <view class="view-list-cell">
+                <view class="view-cell-dot">
+                  <view class="view-dot"></view>
+                </view>
+                <!-- <view class="view-cell-image">
+                  <view class="view-header-image"></view>
+                </view> -->
+                <view class="view-line">
+                  <view class="view-line-top"></view>
+                  <view class="view-line-bottom"></view>
+                </view>
+                <view class="view-cell-content">
+                  <view class="view-title">
+                    <image class="avatarUrl" src="{{userInfo.avatarUrl}}"/>
+                    <text style="font-size: 28rpx;font-family:'PingFangSC-Medium';margin-right:24rpx;">{{item.userId}}</text>
+                    <text style="font-size: 24rpx;font-family: 'PingFangSC-Regular';color:#aaa9ae">{{item.updateTime}}</text>
+                  </view>
+                  <view class="view-content">
+                    <image wx:if="{{item.image == ''}}" src="{{userInfo.avatarUrl}}"/>
+                    <view>
+                      <text style="font-size: 28rpx;font-family: 'PingFangSC-Medium">{{item.articleName}}</text>
+                      <text class="view-content-style">{{item.articleType}}</text>
+                      <view>
+                        <text style="font-size: 24rpx;font-family: 'PingFangSC-Regular'">{{item.articleInfo}}</text>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
             </view>
           </view>
         </view>
-        <!-- 打卡管理部分 -->
-        <view class="punchCard" wx:if="{{bindPunchCard}}">
-          <view class="header">
-            <text class="left">我管理的打卡</text>
-            <view class="left subTitle">
-              <text>学生需加入<text class="number">{{punchCardList.allNum}}</text>个,已加入</text><text class="number">{{punchCardList.neceNum}}</text>个
-            </view>
-            <view class="right">
-              <button bindtap="editPunchCard">编辑</button>
-            </view>
-          </view>
-          <view wx:if="{{!editbindPunchCard}}" class="content">
-            <view class="child">
-              <button class="addNew" bindtap="addNew">创建新的打卡项目</button>
-              <button bindtap="historyPunchCardFunc" class="choseFromHistory">
-                <text class="addIcon">+</text>
-                <text>从打卡历史中选择</text>
-              </button>
-            </view>
-          </view>
-          <view class="stage">
-            <view class="stageHead">
-              <text>阶段一</text>
-            </view>
-            <view wx:for="{{punchCardList.clockers}}" wx:key="{{index}}" style="overflow: hidden;margin-top: 30rpx;display: flex;align-items: center;padding-bottom: 30rpx;border-bottom: 1rpx solid #f1f2f6">
-              <image wx:if="{{editbindPunchCard}}" class="changeLocation" src="../../images/changeLocation.png"/>
-              <image class="stageImg" src=""/>
-              <view class="stageContent">
-                <view class="stageContent-name">
-                  <text>{{item.name}}</text>
-                </view>
-                <view class="stageContent-content">
-                  <text>{{item.intro}}</text>
-                </view>
-                <view>
-                  <button style="border:1rpx solid {{mustChoise ? '#4b69a8;' : '#00c6ae;'}} color:{{mustChoise ? '#4b69a8;' : '#00c6ae;'}}" class="choise">必选</button>
-                  <button class="month">月打卡</button>
-                </view>
-              </view>
-              <view class="operation">
-                <image data-id="{{item.id}}" bindtap="deletePunchCardIdFunc" wx:if="{{!editbindPunchCard}}" src="../../images/delete.png"/>
-                <image bindtap="editPunchCardIdFunc" data-id="{{item.id}}" class="edit" wx:else src="../../images/edit.png"/>
-              </view>
-            </view>
-          </view>
-          <view wx:if="{{editbindPunchCard}}" class="punchCardNumber">
-            <view style="overflow: hidden;">
-              <text>需参加打卡数量</text>
-              <!-- show-value -->
-              <slider class="slider" value="{{sliderNumber}}" bindchange="sliderChange" min="1" max="{{punchCardList.clockers.length}}"/>
-              <text class="sliderContent">{{sliderNumber}}个</text>
-            </view>
-            <button bindtap="editFinshFunc" class="editFinish" type="primary">编辑完成</button>
-          </view>
+      </view>
+      <view wx:else class="indexMain">
+        <view>
+          <image src="../../images/noProject.png" class="noProjectPic"/>
+          <text class="noProjectText">您还没有任何项目</text>
         </view>
-        <!-- <view wx:else style="height: 378rpx;background-color: #f1f2f6">
-          
-        </view> -->
       </view>
     </view>
-    <view wx:else class="indexMain">
-      <view>
-        <image src="../../images/noProject.png" class="noProjectPic"/>
-        <text class="noProjectText">您还没有任何项目</text>
+    
+    <!-- 内容 end -->
+    
+    <!-- 底部 start -->
+    <view class="footer" wx:if="{{!bindPunchCard && isManager}}">
+      <view class="icon-add" bindtap="addProjectFunc">
       </view>
     </view>
+    <!-- <button bindtap="linkTo">linkTo</button> -->
+    <!-- 底部 end -->
   </view>
-  
-  <!-- 内容 end -->
-  
-  <!-- 底部 start -->
-  <view class="footer" wx:if="{{!bindPunchCard}}">
-    <view class="icon-add" bindtap="addProjectFunc">
+</view>
+<!-- 学生 -->
+<view wx-if="{{!isManager && !codeSuccess}}" style="height:100%">
+  <view class="student" bindtap="scanCodeFunc">
+    <image class="background" src="../../images/childrenBackground.png"/>
+    <image class="childrenSearch" src="../../images/childrenSearch.png"/>
+    <view class="smallCircle"></view>
+    <view class="middleCircle"></view>
+    <view class="bigCircle"></view>
+    <view class="studentMessage">
+      <text>未加入任何项目</text>
+      <text>扫码加入</text>
     </view>
   </view>
-  <!-- <button bindtap="linkTo">linkTo</button> -->
-  <!-- 底部 end -->
 </view>

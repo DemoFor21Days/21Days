@@ -1,0 +1,96 @@
+<view class="enterPunchCardDetail">
+	<view class="header borderBottom20">
+		<image src="../../../images/enterPunchCardHeader.png"/>
+		<view class="content" style="margin-left: 22rpx;margin-right:60rpx;">
+			<text>员工领导力培训打卡</text>
+			<text class="colorGray">阶段一</text>
+		</view>
+		<view style="position: absolute;right:30rpx;display: flex;flex-direction: row;">
+			<view class="contentRight" style="margin-right: 20rpx;text-align: center">
+				<text class="colorBlue">1000人</text>
+				<text class="colorGray">已参加</text>
+			</view>
+			<view class="contentRight" style="text-align: center">
+				<text class="colorGreen">1000人</text>
+				<text class="colorGray">已打卡</text>
+			</view>
+		</view>
+	</view>
+	<view class="rule borderBottom20">
+		<text class="colorBlue">打卡规则:</text>
+		<text class="colorGray">员工必须在每日的12点前完成打卡。</text>
+	</view>
+	<view class="minePunchCard borderBottom20">
+		<view class="header">
+			<view style="margin-top:32rpx;">
+				<image style="float: left;" src="{{userInfo.avatarUrl}}"/>
+				<view style="float:left;display: flex;flex-direction: column">
+					<text style="font-size: 28rpx;font-family: 'PingFangSC-Regular'">adore</text>
+					<view style="display: flex;flex-direction: row;align-items: center">
+						<image style="width:25rpx;height: 25rpx;" src="../../../images/childrenPunchCard.png"/>
+						<text class="colorGray" style="font-family: 'PingFangSC-Regular';font-size: 24rpx;margin-left:10rpx;">2天</text>
+					</view>
+				</view>
+			</view>
+			<view style="position: absolute;right: 30rpx;top:48rpx;">
+				<image style="width:58rpx;height:58rpx;" src="../../../images/trophy.png"/>
+				<text style="font-family: 'PingFangSC-Regular';font-size: 28rpx;margin-left:20rpx;">第<text style="color:#f24137;">3</text>名</text>
+			</view>
+		</view>
+		<view class="content">
+			<image style="height:172rpx;width:172rpx;" src="../../../images/punchCard.png"/>
+		</view>
+	</view>
+	<view class="sort">
+		<view class="nav bc_white">
+			<view class="{{selectedDK?'checked':'default'}}" bindtap="selectedDK">打卡圈</view>
+			<view class="{{selectedXQ?'checked':'default'}}" bindtap="selectedXQ">详情</view>
+		</view>
+		<view class="{{selectedDK?'show':'hidden'}}">
+			<view style="margin-top: 10rpx;overflow: hidden;margin-left:30rpx;margin-bottom:40rpx;">
+				<image style="width:90rpx;height: 90rpx;float: left;" src="{{userInfo.avatarUrl}}"/>
+				<view style="float: left;text-align: left;">
+					<text style="font-family: 'PingFangSC-Regular';font-size: 28rpx;">你的名字</text>
+					<view>
+						<image style="width:25rpx;height:25rpx;margin-right:10rpx;" src="../../../images/childrenPunchCardTime.png"/>
+						<text style="font-family: 'PingFangSC-Regular';font-size: 24rpx;color:#999999;margin-right:30rpx;">2天前</text>
+						<image style="width:25rpx;height:25rpx;margin-right:10rpx;" src="../../../images/childrenPunchCard.png"/>
+						<text style="font-family: 'PingFangSC-Regular';font-size: 24rpx;color:#999999">2天</text>
+						<view style="margin-top: 10rpx;">
+							<text style="font-family: 'PingFangSC-Medium';font-size: 32rpx;">哈哈哈哈</text>
+							<image style="display:block;width:200rpx;height:150rpx;margin-top:19rpx;" src="http://f2.topitme.com/2/b9/71/112660598401871b92l.jpg" />
+							<view style="display: flex;flex-direction: row;margin-top: 36rpx;align-items: center;">
+								<image style="height: 29rpx;width:33rpx;margin-right:10rpx;" src="../../../images/grayLike.png"/>
+								<text class="colorGray" style="font-family: 'PingFangSC-Regular';font-size: 28rpx;margin-right:40rpx;">赞</text>
+								<image style="height:29rpx;width:33rpx;margin-right:10rpx;" src="../../../images/grayComment.png"/>
+								<text class="colorGray" style="font-family: 'PingFangSC-Regular';font-size: 28rpx;">评论</text>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="thumbs">
+				<view class="thumbsUp">
+					<image style="width:29rpx;height:25rpx;margin-right:20rpx;" src="../../../images/like.png"/>
+						<image style="width:60rpx;height:60rpx;margin-top:20rpx;margin-left:10rpx;margin-bottom:20rpx;border-radius: 50%;" src="{{userInfo.avatarUrl}}"/>
+				</view>
+				<view class="comment">
+					<image style="width:60rpx;height:60rpx;border-radius: 50%;margin-top: 30rpx;margin-right:22rpx;" src="{{userInfo.avatarUrl}}"/>
+					<view>
+						<text class="name">adore</text>
+						<view style="margin-top: -10rpx;">
+							<text class="content">lala</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="{{selectedXQ?'show':'hidden'}}">
+			xiangq 
+		</view>
+		
+	</view>
+
+
+
+</view>

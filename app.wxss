@@ -1,4 +1,5 @@
 /**app.wxss**/
+@import "./pages/components/messageBox/messageBox.wxss";
 .container {
   height: 100%;
   display: flex;
@@ -7,3 +8,15 @@
   justify-content: space-between;*/
   box-sizing: border-box;
 } 
+.colorGray{
+	color:#aaa9ae
+}
+.colorBlue{
+	color:#4b69a8;
+}
+.colorGreen{
+	color:#00c6ae;
+}
+.borderBottom20{
+	border-bottom:20rpx solid #f3f5f9;
+}

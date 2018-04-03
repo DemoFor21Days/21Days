@@ -19,8 +19,8 @@
 		<view wx:if="{{checked}}" bindtap="checkCode">
 			<text>查看项目二维码</text>
 			<view class="navigator">
-		    <view class="navigator-arrow show"></view>
-		  </view>
+		    	<view class="navigator-arrow show"></view>
+		  	</view>
 		</view>
 		<view wx:else style="position: relative;">
 			<image src="{{dataLists.QRCode}}" style="width:400rpx;height:400rpx;"/>

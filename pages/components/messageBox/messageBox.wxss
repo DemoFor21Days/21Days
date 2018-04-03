@@ -1,0 +1,80 @@
+.days-modal-dialog{
+	/*display: flex;
+	align-items: center;
+	border:1rpx solid red;
+	border-radius: 5rpx;
+	justify-content: center;*/
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translateY(-50%) translateX(-50%);
+	/*border:1rpx solid black;*/
+	border-radius: 15rpx;
+	width: 520rpx;
+	padding-left: 32rpx;
+	padding-right: 32rpx;
+	z-index:1001;
+	background-color: white;
+	/*width: 100%;*/
+}
+.days-modal-mask{
+  	position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.days-modal-dialog .modal-title{
+	height: 92rpx;
+	line-height: 92rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.days-modal-dialog .modal-content {
+	text-align: center;
+}
+.days-modal-dialog .modal-content text{
+	font-family: "PingFangSC-Regular";
+	font-size: 28rpx;
+}
+.days-modal-dialog .modal-content .image{
+	height:160rpx;
+	width:100%;
+	border:1rpx solid red;
+	margin-top: 34rpx;
+}
+.days-modal-dialog .modal-content .icon{
+	display: flex;
+	justify-content: center;
+}
+.days-modal-dialog .modal-content .icon image{
+	width:80rpx;
+	height: 80rpx;
+	margin-top: 65rpx;
+}
+.days-modal-dialog .modal-footer{
+	height: 90rpx;
+	line-height: 90rpx;
+	border-top: 1rpx solid #eeeeee;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 30rpx;
+}
+.days-modal-dialog .modal-footer view{
+	border-left:1rpx solid #eeeeee;
+	text-align: center;
+	flex:1;
+	font-size: 32rpx;
+	font-family: "PingFangSC-Medium";
+}
+.days-modal-dialog .modal-footer .btn-confirm{
+	color: #4b69a8;
+}
+.days-modal-dialog .modal-footer view:last-child{
+	border-left:0;
+}

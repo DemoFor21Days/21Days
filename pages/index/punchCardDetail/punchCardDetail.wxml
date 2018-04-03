@@ -1,0 +1,73 @@
+<view class="punchCardDetail">
+	<view class="banner">
+		<image src="../../../images/punchCardDetailBanner.png"/>
+	</view>
+	<view>
+		<view class="title">
+			<text>{{dataList.projectName}}认证培训打卡</text>
+		</view>
+		<view class="state">
+			<view class="stateHeader">
+				<text style="font-family: 'PingFangSC-Medium'">{{dataList.stage}}</text>
+				<text style="margin-left:24rpx;font-family: 'PingFangSC-Regular';color:#aaa9ae">{{dataList.totalTime}}天</text>
+			</view>
+			<view class="stateContent">
+				<view class="content">
+					<text style="font-family: 'PingFangSC-Medium';font-size:32rpx;color:#4b69a8">{{dataList.enterNumber}}人</text>
+					<text style="font-family: 'PingFangSC-Regular';font-size: 24rpx;color:#aaa9ae;display: block;margin-top:-110rpx;">已参加</text>
+				</view>
+				<view class="content">
+					<text style="font-family: 'PingFangSC-Medium';font-size: 32rpx;color:#00c6ae">{{dataList.punchCardNumber}}次</text>
+					<text style="font-family: 'PingFangSC-Regular';font-size: 24rpx;color:#aaa9ae;display: block;margin-top:-110rpx;">已打卡</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="intro">
+		<text style="font-family: 'PingFangSC-Medium';color:#4b69a8;margin-left:30rpx;margin-right:30rpx;">活动详情:</text>
+		<text style="font-family: 'PingFangSC-Regular';color:#aaa9ae">{{dataList.punchCardDetail}}</text>
+	</view>
+	<view class="">
+		<view class="state">
+			<view class="stateHeader">
+				<text style="font-family: 'PingFangSC-Medium'">打卡圈</text>
+			</view>
+			<block wx:for="{{dataList.party}}">
+				<view style="margin-top: 10rpx;overflow: hidden;margin-left:30rpx;margin-bottom:40rpx;">
+					<image style="width:90rpx;height: 90rpx;float: left;" src="{{item.avatarUrl}}"/>
+					<view style="float: left;">
+						<text style="font-family: 'PingFangSC-Regular';font-size: 28rpx;">{{item.userInfoName}}</text>
+						<view>
+							<image style="width:25rpx;height:25rpx;margin-right:10rpx;" src="../../../images/childrenPunchCardTime.png"/>
+							<text style="font-family: 'PingFangSC-Regular';font-size: 24rpx;;color:#999999;margin-right:30rpx;">{{item.childrenPunchCardTime}}</text>
+							<image style="width:25rpx;height:25rpx;margin-right:10rpx;" src="../../../images/childrenPunchCard.png"/>
+							<text style="font-family: 'PingFangSC-Regular';font-size: 24rpx;color:#999999">{{item.childrenPunchCard}}</text>
+							<view style="margin-top: 10rpx;">
+								<text style="font-family: 'PingFangSC-Medium';font-size: 32rpx;">{{item.comment}}</text>
+								<image wx:if="{{item.commentImg}}" style="display:block;width:200rpx;height:150rpx;margin-top:19rpx;" src="{{item.commentImg}}" />
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="thumbs">
+					<view class="thumbsUp">
+						<image style="width:29rpx;height:25rpx;margin-right:20rpx;" src="../../../images/like.png"/>
+						<image wx:for="{{item.thumbUp}}" wx:for-item="thumbUp" style="width:60rpx;height:60rpx;margin-top:20rpx;margin-left:10rpx;margin-bottom:20rpx;border-radius: 50%;" src="{{thumbUp}}"/>
+					</view>
+					<view class="comment" wx:for="{{item.otherComments}}" wx:for-item="otherComments">
+						<image style="width:60rpx;height:60rpx;border-radius: 50%;margin-top: 30rpx;margin-right:22rpx;" src="{{item.avatarUrl}}"/>
+						<view>
+							<text class="name">{{otherComments.userInfoName}}</text>
+							<view style="margin-top: -10rpx;">
+								<text class="content">{{otherComments.comment}}</text>
+							</view>
+						</view>
+					</view>
+				</view>
+			</block>
+		</view>
+	</view>
+	<view class="enterPunchCard">
+		<button bindtap="enter">加入打卡</button>
+	</view>
+</view>

@@ -1,0 +1,18 @@
+<template name="messageBox">
+	<view class='days-modal-mask' wx:if="{{daysModalShow}}"></view>
+	<view class="days-modal-dialog" wx:if="{{daysModalShow}}">
+	  <view class="modal-title" wx:if="{{modalObject.modalTitle !== ''}}">{{modalObject.modalTitle}}</view>
+	  <view class="modal-content">
+	  	<view class="icon" wx:if="{{modalObject.hasIcon}}">
+	  		<image src="{{modalObject.IconUrl}}"></image>
+	  	</view>
+	    <text>{{modalObject.modalContent}}</text>
+	    <image class="image" wx:if="{{modalObject.hasImg}}" src="{{modalObject.ImgUrl}}"/>
+	  </view>
+	  <view class="modal-footer">
+	    <view class="btn-cancel" bindtap="onCancel" data-status="cancel" wx:if="{{modalObject.hasCancel}}">{{modalObject.cancelText}}</view>
+	    <view data-daysModalShow="{{daysModalShow}}" class="btn-confirm" bindtap="onConfirm" data-status="confirm">{{modalObject.confirmText}}
+	    </view>
+	  </view>
+	</view>
+</template>

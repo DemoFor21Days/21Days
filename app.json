@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/index/enterPunchCardDetail/enterPunchCardDetail",
+    "pages/index/punchCardDetail/punchCardDetail",
     "pages/index/index",
     "pages/user/user",
     "pages/user/setting/setting",

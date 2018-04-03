@@ -1,5 +1,8 @@
 //app.js
+import { MessageBoxPannel } from './pages/components/messageBox/messageBox'
+import Touches from './utils/Touches.js'
 App({
+  MessageBoxPannel,
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -35,5 +38,6 @@ App({
   },
   globalData: {
     userInfo: null
-  }
+  },
+  Touches: new Touches()
 })
